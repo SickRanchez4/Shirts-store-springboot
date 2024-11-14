@@ -1,0 +1,28 @@
+type Query {
+    shirtById(id: ID): Shirt
+    shirtByDescription(description: String): Shirt
+    designById(id: ID): Design
+}
+
+type Shirt {
+    id: ID
+    description: String
+    size: [String]
+    available: Boolean
+    color: [String]
+    price: Int
+    img_url: String
+}
+
+type Design {
+    id: ID
+    title: String
+    hash: String
+    img_url: String
+    designer: String
+}
+
+type Mutation {
+    addShirt(description: String, size: [String], available: Boolean, color: [String], price: Int, img_url: String): Shirt
+    addDesign(title: String, hash: String, img_url: String, designer: String): Design
+}
